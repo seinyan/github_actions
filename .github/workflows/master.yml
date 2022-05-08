@@ -1,7 +1,7 @@
 name: Test unit and e2e
 on:
   push:
-    branches: [master1]
+    branches: [master]
 
 jobs:
   testing:
