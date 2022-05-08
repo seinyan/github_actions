@@ -12,7 +12,7 @@
 #ssh root@92.63.99.92
 #ssh root@92.63.99.92 "bash -s" <./deploy.sh
 
-cd /var/www/nest_github_actions
+cd /var/www/github_actions
 
 git pull
 
