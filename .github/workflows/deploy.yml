@@ -1,4 +1,4 @@
-name: Test unit and e2e
+name: Tests(unit && e2e) and deploy
 on:
   push:
     branches: [master]
