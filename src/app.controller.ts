@@ -9,6 +9,6 @@ export class AppController {
 
   @Get()
   getHello(): string {
-    return 'Hello task ';
+    return 'Hello task';
   }
 }
