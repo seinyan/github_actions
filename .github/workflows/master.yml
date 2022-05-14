@@ -1,7 +1,12 @@
-name: Test unit and e2e
+name: Master branch test unit && e2e
 on:
   push:
-    branches: [master]
+    branches:
+      - master
+
+  pull_request:
+    branches:
+      - master
 
 jobs:
   testing:
@@ -26,32 +31,8 @@ jobs:
       - name: Run lint code
         run: npm run lint
 
-      - name: Run unit tests
+      - name: Run unit tests unit
         run: npm run test
 
-      - name: Run e2e tests
+      - name: Run e2e tests e2e
         run: npm run test:e2e
-
-  t2:
-    runs-on: ubuntu-latest
-    needs:
-      - testing
-    strategy:
-      matrix:
-        node-version: [14.x]
-
-    steps:
-
-      - name: Copy repository
-        uses: actions/checkout@v1
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Install npm dependencies
-        run: npm ci
-
-      - name: Run lint code
-        run: npm run lint
